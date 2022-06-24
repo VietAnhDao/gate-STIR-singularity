@@ -1,6 +1,7 @@
 #!/bin/bash
 # Compile GATE including all dependencies.
-
+export CC=/usr/bin/gcc
+export CXX=/usr/bin/g++
 set -e
 
 # Each subproject has 
