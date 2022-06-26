@@ -21,6 +21,7 @@ yum install -y \
   tar \
   ncurses-devel \
   swig \
+  boost-devel \
   gdb vim valgrind zip tmux git-lfs patch openssl-devel fftw3-devel libtsan # optional, for easier debugging
 mkdir /software
 
