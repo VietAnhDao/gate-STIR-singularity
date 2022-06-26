@@ -19,8 +19,9 @@ yum install -y \
   python3-devel \
   which nano \
   tar \
-  gdb vim valgrind zip tmux git-lfs patch openssl-devel fftw3-devel libtsan # optional, for easier debugging \
-  libncurses5-dev libncursesw5-dev
+  ncurses-devel \
+  swig \
+  gdb vim valgrind zip tmux git-lfs patch openssl-devel fftw3-devel libtsan # optional, for easier debugging
 mkdir /software
 
 
