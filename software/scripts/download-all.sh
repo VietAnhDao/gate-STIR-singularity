@@ -68,17 +68,17 @@ else
   git clone --branch $Gate_Version https://github.com/OpenGATE/Gate.git gate/src
 fi
 # Boost
-if [[ -e Boost/src ]]
-then 
-  echo "Boost directory already exists, skipping download."
-else
-  export Boost_File=boost_1_55_0.tar.gz
-  export BOOST_URL=https://sourceforge.net/projects/boost/files/boost/1.55.0/boost_1_55_0.tar.gz
-  mkdir -p Boost/src Boost/bin Boost/install
-  wget $BOOST_URL
-  tar -zxf $Boost_File -C Boost/src --strip-components=1
-  rm $Boost_File
-fi
+#if [[ -e Boost/src ]]
+#then 
+#  echo "Boost directory already exists, skipping download."
+#else
+#  export Boost_File=boost_1_55_0.tar.gz
+#  export BOOST_URL=https://sourceforge.net/projects/boost/files/boost/1.55.0/boost_1_55_0.tar.gz
+#  mkdir -p Boost/src Boost/bin Boost/install
+#  wget $BOOST_URL
+#  tar -zxf $Boost_File -C Boost/src --strip-components=1
+#  rm $Boost_File
+#fi
 # STIR
 if [[ -e STIR/src ]]
 then 
