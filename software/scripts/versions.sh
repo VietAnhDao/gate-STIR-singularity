@@ -2,6 +2,7 @@ export Gate_Version=v9.2
 
 export ITK_Version=master
 
+export STIR_Version=master
 case "$Gate_Version" in
 
 v8.1)
