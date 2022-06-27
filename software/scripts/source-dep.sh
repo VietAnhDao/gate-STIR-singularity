@@ -9,4 +9,4 @@ if [[ -f $GATE_ROOT_DIR/root-cern/install/bin/thisroot.sh ]]; then
   source $GATE_ROOT_DIR/root-cern/install/bin/thisroot.sh 
 fi
 export PATH=$PATH:$GATE_ROOT_DIR/gate/bin
-export PATH=$PATH:$GATE_ROOT_DIR/STIR/bin
+export PATH=$PATH:$GATE_ROOT_DIR/STIR/install
