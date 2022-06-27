@@ -84,7 +84,7 @@ if [[ -e STIR/src ]]
 then 
   echo "STIR directory already exists, skipping download."
 else
-  mkdir -p STIR/src STIR/bin
+  mkdir -p STIR/src STIR/bin STIR/install
   git clone --branch $STIR_Version https://github.com/UCL/STIR STIR/src
 fi
 
