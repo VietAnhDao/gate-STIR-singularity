@@ -10,6 +10,5 @@ cd $GATE_ROOT_DIR/STIR/bin && \
                   -DITK_DIR=$PWD/../../ITK/bin \
                   -DCMAKE_BUILD_TYPE=$CMAKE_BUILD_TYPE \
                   -DCMAKE_CXX_STANDARD=17  \
-                  -DCMAKE_INSTALL_PREFIX=$GATE_ROOT_DIR/STIR/bin \
-                  -DBOOST_ROOT:PATH=$GATE_ROOT_DIR/Boost/src \
-                  -DSTIR_CONFIG_DIR=$GATE_ROOT_DIR/STIR/bin/share/stir/config
+                  -DCMAKE_INSTALL_PREFIX=$GATE_ROOT_DIR/STIR/install \
+                  -DSTIR_CONFIG_DIR=$GATE_ROOT_DIR/STIR/install/share/stir/config
