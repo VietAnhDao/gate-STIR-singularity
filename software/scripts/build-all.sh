@@ -22,4 +22,5 @@ $GATE_ROOT_DIR/root-cern/configure.sh
 $GATE_ROOT_DIR/root-cern/build.sh
 $GATE_ROOT_DIR/gate/configure.sh
 $GATE_ROOT_DIR/gate/build.sh
-
+$GATE_ROOT_DIR/STIR/configure.sh
+$GATE_ROOT_DIR/STIR/build.sh
