@@ -1,6 +1,10 @@
 Bootstrap: library
 From: rockylinux:8
 
+%help
+singularity image that contains: root, CLHEP, Geant4, GATE and STIR.
+to run in current directory use: singularity exec --bind ./:/WORKDIR/ gate.sif Gate main.mac
+
 %post
 yum install -y \
   make \
@@ -23,9 +27,18 @@ yum install -y \
   swig \
   boost-devel \
   qemu-kvm \
+  git \
   gdb vim valgrind zip tmux git-lfs patch openssl-devel fftw3-devel libtsan # optional, for easier debugging
-mkdir /software
-
+mkdir /APP
+# uncomment this for building software outside container
+#mkdir /software
+# building inside container
+git clone https://github.com/VietAnhDao/gate-STIR-singularity
+mv -v ./gate-STIR-singularity/* .
+rm -f -r gate-STIR-singularity
+export GATE_ROOT_DIR=/software
+/software/scripts/download-all.sh
+/software/scripts/build-all.sh
 
 %environment
 export USE_RTK=ON
@@ -43,8 +56,6 @@ export USE_RTK=ON
 # Preferably this is /software inside the container, and 
 # linked to a directory on the host system.
 export GATE_ROOT_DIR=/software
-
-export PATH=/software/cmake-3.18.4-Linux-x86_64/bin/:$PATH
 
 %runscript
 . /software/scripts/source-dep.sh
