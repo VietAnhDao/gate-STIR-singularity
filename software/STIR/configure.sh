@@ -6,6 +6,7 @@ cd $GATE_ROOT_DIR/STIR/bin && \
   source $PWD/../../geant4/install/bin/geant4.sh && \
   source $PWD/../../root-cern/install/bin/thisroot.sh && \
   cmake ../src/ -DGeant4_DIR=$PWD/../../geant4/install \
+                  -DBUILD_SWIG_PYTHON=ON \
                   -DGEANT4_USE_SYSTEM_CLHEP=ON \
                   -DITK_DIR=$PWD/../../ITK/bin \
                   -DCMAKE_BUILD_TYPE=$CMAKE_BUILD_TYPE \
