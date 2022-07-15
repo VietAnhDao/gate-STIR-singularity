@@ -15,14 +15,14 @@ cd $GATE_ROOT_DIR
 
 
 # CMake
-if [[ -e "cmake-3.18.4-Linux-x86_64" ]]
-then 
-  echo "cmake-... directory already exists, skipping download."
-else
-  wget https://github.com/Kitware/CMake/releases/download/v3.18.4/cmake-3.18.4-Linux-x86_64.tar.gz
-  tar xzvf cmake-3.18.4-Linux-x86_64.tar.gz
-  rm cmake-3.18.4-Linux-x86_64.tar.gz
-fi
+#if [[ -e "cmake-3.18.4-Linux-x86_64" ]]
+#then 
+#  echo "cmake-... directory already exists, skipping download."
+#else
+#  wget https://github.com/Kitware/CMake/releases/download/v3.18.4/cmake-3.18.4-Linux-x86_64.tar.gz
+#  tar xzvf cmake-3.18.4-Linux-x86_64.tar.gz
+#  rm cmake-3.18.4-Linux-x86_64.tar.gz
+#fi
 # CLHEP
 if [[ -e clhep/src ]]
 then 
