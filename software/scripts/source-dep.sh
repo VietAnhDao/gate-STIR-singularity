@@ -3,7 +3,9 @@
 # and/or ROOT.
 
 if [[ -f $GATE_ROOT_DIR/geant4/install/bin/geant4.sh ]]; then
-  source $GATE_ROOT_DIR/geant4/install/bin/geant4.sh 
+  # cd then source because zsh etc... requires this
+  cd $GATE_ROOT_DIR/geant4/install/bin
+  source geant4.sh
 fi
 if [[ -f $GATE_ROOT_DIR/root-cern/install/bin/thisroot.sh ]]; then
   source $GATE_ROOT_DIR/root-cern/install/bin/thisroot.sh 
