@@ -7,6 +7,12 @@ cd $GATE_ROOT_DIR/STIR/bin && \
   source $PWD/../../root-cern/install/bin/thisroot.sh && \
   cmake ../src/ -DGeant4_DIR=$PWD/../../geant4/install \
                   -DBUILD_SWIG_PYTHON=ON \
+                 # uncomment if using homebrew 
+                 # -DPython_EXECUTABLE=/opt/homebrew/bin/python3 \
+                 # -DSTIR_OPENMP=ON \
+                 # -DPython_INCLUDE_DIRS=/opt/homebrew/opt/python@3.9/Frameworks/Python.framework/Versions/3.9/include \
+                 # -DPython_LIBRARIES=/opt/homebrew/opt/python@3.9/Frameworks/Python.framework/Versions/3.9/lib/libpython3.9.dylib \
+                 # -DPython_NumPy_INCLUDE_DIRS \
                   -DGEANT4_USE_SYSTEM_CLHEP=ON \
                   -DITK_DIR=$PWD/../../ITK/bin \
                   -DCMAKE_BUILD_TYPE=$CMAKE_BUILD_TYPE \
