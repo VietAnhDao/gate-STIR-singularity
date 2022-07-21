@@ -8,6 +8,7 @@ to run in current directory use: singularity exec --bind ./:/WORKDIR/ gate.sif G
 %post
 yum install -y \
   make \
+  python3-setuptools \
   libX11-devel.x86_64 \
   libXpm-devel.x86_64 \
   libXft-devel.x86_64 \
@@ -31,8 +32,6 @@ yum install -y \
   gdb vim valgrind zip tmux git-lfs patch openssl-devel fftw3-devel libtsan # optional, for easier debugging
 mkdir /APP
 pip3 install numpy
-pip3 install jupyter
-pip3 install jyputerlab
 # uncomment to build outside container
 mkdir /software
 # uncomment to build inside container
