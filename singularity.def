@@ -30,6 +30,7 @@ yum install -y \
   git \
   gdb vim valgrind zip tmux git-lfs patch openssl-devel fftw3-devel libtsan # optional, for easier debugging
 mkdir /APP
+pip3 install numpy
 # uncomment this for building software outside container
 #mkdir /software
 # building inside container
