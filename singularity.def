@@ -31,15 +31,17 @@ yum install -y \
   gdb vim valgrind zip tmux git-lfs patch openssl-devel fftw3-devel libtsan # optional, for easier debugging
 mkdir /APP
 pip3 install numpy
-# uncomment this for building software outside container
-#mkdir /software
-# building inside container
-git clone https://github.com/VietAnhDao/gate-STIR-singularity
-mv -v ./gate-STIR-singularity/* .
-rm -f -r gate-STIR-singularity
-export GATE_ROOT_DIR=/software
-/software/scripts/download-all.sh
-/software/scripts/build-all.sh
+pip3 install jupyter
+pip3 install jyputerlab
+# uncomment to build outside container
+mkdir /software
+# uncomment to build inside container
+#git clone https://github.com/VietAnhDao/gate-STIR-singularity
+#mv -v ./gate-STIR-singularity/* .
+#rm -f -r gate-STIR-singularity
+#export GATE_ROOT_DIR=/software
+#/software/scripts/download-all.sh
+#/software/scripts/build-all.sh
 
 %environment
 export USE_RTK=ON
