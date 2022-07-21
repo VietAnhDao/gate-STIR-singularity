@@ -7,6 +7,7 @@ cd $GATE_ROOT_DIR/STIR/bin && \
   source $PWD/../../root-cern/install/bin/thisroot.sh && \
   cmake ../src/ -DGeant4_DIR=$PWD/../../geant4/install \
                   -DBUILD_SWIG_PYTHON=ON \
+                  -DSTIR_OPENMP=ON \
                  # uncomment if using homebrew 
                  # -DPython_EXECUTABLE=/opt/homebrew/bin/python3 \
                  # -DSTIR_OPENMP=ON \
