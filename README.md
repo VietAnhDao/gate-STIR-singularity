@@ -49,7 +49,7 @@ it is recommended you set two folder path:
 ```
 gate-singularity@local$export WORKDIR=/path/to/folder/to/workdir
 gate-singularity@local$export SOFTWARE=/path/to/git/gate-STIR-singularity/software
-gate-singularity@local$export IMAGEDIR=/path/to/folder/with/sif/images/sont.sif
+gate-singularity@local$export IMAGE=/path/to/folder/with/sif/images/sont.sif
 ```
 
 Before initial build choose which software you want to install e.g. (STIR only require root, clhep, ITK and maybe miniconda).
@@ -70,5 +70,6 @@ Singularity exec --bind ./:/workdir,$SOFTWARE/:/software $IMAGE/STIR.sif bash -c
 
 run scripts:
 ```
-Singularity exec --bind ./:/workdir,$SOFTWARE/:/software $IMAGE/STIR.sif bash -c "source /software/scripts/source-dep.sh && cd /workdir && YOUR_SCRIPTS.sh" &> singularity.log
+Singularity exec --bind $WORKDIR:/workdir,$SOFTWARE/:/software $IMAGE/STIR.sif bash -c "source /software/scripts/source-dep.sh && cd /workdir && YOUR_SCRIPTS.sh" &> singularity.log
 ```
+NOTE: WORKDIR can be which ever directory you like e.g. "./" which is current dir.
