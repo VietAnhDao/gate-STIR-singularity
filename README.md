@@ -65,11 +65,11 @@ Singularity> /software/scripts/build-all.sh
 
 run command:
 ```
-Singularity exec --bind ./:/workdir,$SOFTWARE/:/software $IMAGE/STIR.sif bash -c "source /software/scripts/source-dep.sh && cd /workdir && YOUR_COMMAND_1 && YOUR_COMMAND_2 && etc" &> singularity.log
+singularity exec --bind ./:/workdir,$SOFTWARE/:/software $IMAGE/STIR.sif bash -c "source /software/scripts/source-dep.sh && cd /workdir && YOUR_COMMAND_1 && YOUR_COMMAND_2 && etc" &> singularity.log
 ```
 
 run scripts:
 ```
-Singularity exec --bind $WORKDIR:/workdir,$SOFTWARE/:/software $IMAGE/STIR.sif bash -c "source /software/scripts/source-dep.sh && cd /workdir && YOUR_SCRIPTS.sh" &> singularity.log
+singularity exec --bind $WORKDIR:/workdir,$SOFTWARE/:/software $IMAGE/STIR.sif bash -c "source /software/scripts/source-dep.sh && cd /workdir && YOUR_SCRIPTS.sh" &> singularity.log
 ```
 NOTE: WORKDIR can be which ever directory you like e.g. "./" which is current dir.
