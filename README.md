@@ -4,7 +4,7 @@ Compile GATE+dependencies in a Singularity container
 ```
 gate-singularity@local$ sudo singularity build cont.simg singularity.def
 gate-singularity@local$ ... # Upload cont.simg and ./software to the cluster, and login
-gate-singularity@cluster$ singularity run --bind software:/software cont.simg
+gate-singularity@cluster$ singularity shell --bind software:/software cont.simg
 Singularity> /software/scripts/download-all.sh
 # ...
 Singularity> /software/scripts/build-all.sh
@@ -51,7 +51,24 @@ gate-singularity@local$export WORKDIR=/path/to/folder/to/workdir
 gate-singularity@local$export SOFTWARE=/path/to/git/gate-STIR-singularity/software
 gate-singularity@local$export IMAGEDIR=/path/to/folder/with/sif/images/sont.sif
 ```
-run container:
+
+Before initial build choose which software you want to install e.g. (STIR only require root, clhep, ITK and maybe miniconda).
+1. Edit ./software/scripts/download-all.sh
+2. Edit ./software/scripts/build-all.sh
+
+Initial build:
 ```
-singularity run --bind $SOFTWARE:/software $IMAGEDIR/cont.sif
+gate-singularity@local$singularity shell --bind $SOFTWARE:/software $IMAGEDIR/cont.sif
+Singularity> /software/scripts/download-all.sh
+Singularity> /software/scripts/build-all.sh
+```
+
+run command:
+```
+Singularity exec --bind ./:/workdir,$SOFTWARE/:/software $IMAGE/STIR.sif bash -c "source /software/scripts/source-dep.sh && cd /workdir && YOUR_COMMAND_1 && YOUR_COMMAND_2 && etc" &> singularity.log
+```
+
+run scripts:
+```
+Singularity exec --bind ./:/workdir,$SOFTWARE/:/software $IMAGE/STIR.sif bash -c "source /software/scripts/source-dep.sh && cd /workdir && YOUR_SCRIPTS.sh" &> singularity.log
 ```
